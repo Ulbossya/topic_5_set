@@ -1,0 +1,245 @@
+//Write a Dart program to check if a set is a subset of another set.
+// void main() {
+//   Set<int> set1 = {1, 2, 3, 4, 5};
+//   Set<int> set2 = {2, 3};
+
+//   bool isSubset = set1.containsAll(set2);
+
+//   if (isSubset) {
+//     print("set2 is a subset of set1");
+//   } else {
+//     print("set2 is not a subset of set1");
+//   }
+// }
+
+//Write a Dart program to remove all elements from a given set.
+// void main (){
+//     var set = {"4e", "4g", "3f1", "3f2", "3d"};
+//     set.removeAll({"4e", "4g", "3f1", "3f2", "3d"});
+//     print(set); 
+// }
+
+
+//Write a Dart program to find the maximum and minimum values in a set.
+// void main() {
+//   var numbers = {1, 2, 40, 45, 6, 43};
+//   int max = numbers.first;
+//   int min = numbers.first;
+//   numbers.forEach((element) {
+//     if (element > max) {
+//       max = element;
+//     }
+//     if (element < min) {
+//       min = element;
+//     }
+//   });
+
+//   print("Max:$max");
+//   print("Min:$min");
+// }
+
+//Write a Dart program to find the length of a set.
+// void main() {
+//   Set<int> set = {1, 2, 3, 4, 5};
+
+//   int length = set.length;
+
+//   print("length: $length");
+// }
+
+
+//Write a Dart program to check if a given value is present in a set or not.
+// void main() {
+//   Set<int> set = {1, 2, 3, 4, 5};
+//   int valueToCheck = 3; 
+
+//   if (set.contains(valueToCheck)) {
+//     print("$valueToCheck is present");
+//   } else {
+//     print("$valueToCheck is not present");
+//   }
+// }
+
+
+//Write a Dart program to find elements in a given set that are not in another set.
+// void main() {
+//   Set<int> set1 = {1, 2, 3, 4, 5};
+//   Set<int> set2 = {3, 4, 5, 6, 7};
+//   Set<int> differenceSet = set1.difference(set2);
+
+//   print("$differenceSet");
+// }
+
+
+//Write a Dart program to remove the intersection of a second set with a first set.
+// void main() {
+//   var set1 = {2, 3, 4, 5, 6};
+//   var set2 = {3, 4, 5, 6, 7};
+//   Set<int> intersection = set1.intersection(set2);
+//   set1.removeAll(intersection);
+
+//   print(set1);
+// }
+
+
+
+
+
+//Write a Dart program that finds all pairs of elements in a list whose sum is equal to a given value.
+// void pairs(List<int> numbers, int targetSum) {
+//   for (int i = 0; i < numbers.length - 1; i++) {
+//     for (int j = i + 1; j < numbers.length; j++) {
+//       if (numbers[i] + numbers[j] == targetSum) {
+//         print("Pair: (${numbers[i]}, ${numbers[j]})");
+//       }
+//     }
+//   }
+// }
+
+// void main() {
+//   List<int> numbers = [1, 2, 3, 4, 5, 6, 7];
+//   int targetSum = 9;
+
+//   pairs(numbers, targetSum);
+// }
+
+
+//Write a Dart program to find the longest common prefix of all strings. Use the Dart set.
+// String longest(List<String> strings) {
+//   if (strings.isEmpty) {
+//     return ""; 
+//   }
+
+//   String firststr = strings[0];
+//   int minstr = firststr.length;
+
+//   for (String str in strings) {
+//     minstr = str.length < minstr ? str.length : minstr;
+//   }
+
+//   for (int i = 0; i < minstr; i++) {
+//     charToMatch := firststr[i];
+//     for (String str in strings) {
+//       if (str[i] != charToMatch) {
+//         return firststr.substring(0, i);
+//       }
+//     }
+//   }
+
+//   return firststr.substring(0, minstr);
+// }
+
+// void main() {
+//   List<String> strings = ["google", "chrome", "edge", "share"];
+
+//   String commonPrefix = longest(strings);
+
+//   if (commonPrefix.isNotEmpty) {
+//     print("$commonPrefix");
+//   } else {
+//     print("No");
+//   }
+// }
+
+
+
+//Write a Dart program to find the two numbers whose product is maximum among all the pairs in a given list of numbers. Use the Dart set.
+
+// void main() {
+//   List<int> numbers = [2, 4, 6, 8, 10, 12, 14, 16];
+  
+//   if (numbers.length < 2) {
+//     print(" not numbers in the list");
+//     return;
+//   }
+
+//   int maxNum = numbers[0];
+//   int secMaxNum = numbers[1];
+
+//   for (int i = 1; i < numbers.length; i++) {
+//     if (numbers[i] > maxNum) {
+//       secMaxNum = maxNum;
+//       maxNum = numbers[i];
+//     } else if (numbers[i] > secMaxNum && numbers[i] != maxNum) {
+//       secMaxNum = numbers[i];
+//     }
+//   }
+
+//   int maxProduct = maxNum * secMaxNum;
+
+//   print("$maxNum and $secMaxNum");
+//   print(" $maxProduct");
+// }
+
+
+
+
+//Write a Dart program to find all the anagrams and group them together from a given list of strings. Use the Dart data type.
+// void main() {
+//   List<String> strings = ["dana", "dina", "aru", "merey", "kmerey", "ymerey", "aizh", "yuki"];
+
+//   Map<String, List<String>> anagram = {};
+
+//   for (String str in strings) {
+//     String sortedStr = String.fromCharCodes(str.runes.toList()..sort());
+
+//     if (!anagram.containsKey(sortedStr)) {
+//       anagram[sortedStr] = [str];
+//     } else {
+//       anagram[sortedStr].add(str);
+//     }
+//   }
+//   anagram.removeWhere((key, value) => value.length == 1);
+//   for (List<String> group in anagram.values) {
+//     print("${group.join(', ')}");
+//   }
+// }
+
+
+
+//Write a Dart program to find all the unique combinations of 3 numbers from a given list of numbers, adding up to a target number.
+
+// void findcombin(List<int> numbers, int targetSum) {
+//   Set<List<int>> combs = Set<List<int>>();
+
+//   for (int i = 0; i < numbers.length - 2; i++) {
+//     for (int j = i + 1; j < numbers.length - 1; j++) {
+//       for (int k = j + 1; k < numbers.length; k++) {
+//         int sum = numbers[i] + numbers[j] + numbers[k];
+//         if (sum == targetSum) {
+//           combs.add([numbers[i], numbers[j], numbers[k]]);
+//         }
+//       }
+//     }
+//   }
+//   if (combs.isEmpty) {
+//     print("No combin");
+//   } else {
+//     print("$targetSum:");
+//     combs.forEach((combination) {
+//       print(combination);
+//     });
+//   }
+// }
+// void main() {
+//   List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//   int targetSum = 15;
+
+//   findcombin(numbers, targetSum);
+// }
+
+
+
+//Write a Dart program to remove all duplicates from a given list of strings and return a list of unique strings. Use the Dart set data type.
+// List<String> removedup(List<String> inputList) {
+//   Set<String> uniqueSet = Set<String>.from(inputList);
+//   return uniqueSet.toList();
+// }
+
+// void main() {
+//   List<String> inputList = ["leap", "acer", "mac", "asus", "lenova"];
+//   List<String> uniqueList = removedup(inputList);
+
+//   print("$inputList");
+//   print("$uniqueList");
+// }
